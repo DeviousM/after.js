@@ -11,7 +11,8 @@
     "release": "^6.1.0"
   },
   "workspaces": [
-    "packages/*"
+    "packages/after.js",
+    "packages/babel-plugin-after"
   ],
   "scripts": {
     "test:ci": "lerna run test:ci --stream",

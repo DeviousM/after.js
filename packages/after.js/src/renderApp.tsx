@@ -63,7 +63,7 @@ export async function renderApp<T>(
     ...rest,
   };
   const pathname: string = utils.stripBasename(
-    url.parse(req.url).pathname as string,
+    decodeURI(url.parse(req.url).pathname as string),
     basename
   );
 
@@ -142,7 +142,10 @@ export async function renderApp<T>(
   // get css and javascript file paths for the async componetns
   const { scripts, styles } = getAssets({ route: match, chunks });
 
-  const reactRouterMatch = matchPath(req.url, match as RouteProps);
+  const reactRouterMatch = matchPath(
+    decodeURI(url.parse(req.url).pathname as string),
+    match as RouteProps
+  );
 
   // Docuement.getInitialProps() will call renderPage()
   // and renderPage() will call ReactDOMServer.renderToString

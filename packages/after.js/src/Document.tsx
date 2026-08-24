@@ -47,11 +47,15 @@ export const AfterRoot: React.FC = () => {
   return <div id="root" dangerouslySetInnerHTML={{ __html: html }} />;
 };
 
-export const AfterData: React.FC<{ data?: object }> = ({ data }) => {
+export const AfterData: React.FC<{ data?: object; nonce?: string }> = ({
+  data,
+  nonce,
+}) => {
   const { data: contextData } = useAfterContext();
   return (
     <script
       defer
+      nonce={nonce}
       dangerouslySetInnerHTML={{
         __html: `window.__SERVER_APP_STATE__ =  ${serialize({
           ...(data || contextData),
