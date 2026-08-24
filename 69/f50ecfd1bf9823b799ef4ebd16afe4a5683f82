@@ -1,0 +1,14 @@
+packages/after.js/src/renderApp.tsx
+  h_711ca8ae66e98a 66,146
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.14",
+  "base_commit_sha": "69f50ecfd1bf9823b799ef4ebd16afe4a5683f82",
+  "prompts": {},
+  "humans": {
+    "h_711ca8ae66e98a": {
+      "author": "Michał Kostrzyński <michal.kostrzynski@stonly.com>"
+    }
+  }
+}
