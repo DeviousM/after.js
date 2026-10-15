@@ -16,7 +16,12 @@ import {
   TransitionBehavior,
   CtxBase,
 } from './types';
-import { get404Component, getAllRoutes, isInstantTransition } from './utils';
+import {
+  get404Component,
+  getAllRoutes,
+  isInstantTransition,
+  isLocationChanged,
+} from './utils';
 import { loadStaticProps } from './loadStaticProps';
 
 export interface AfterpartyProps extends RouteComponentProps<any> {
@@ -36,7 +41,7 @@ export interface AfterpartyState {
 }
 
 class Afterparty extends React.Component<AfterpartyProps, AfterpartyState> {
-  state = {
+  state: AfterpartyState = {
     data: this.props.data.initialData,
     previousLocation: null,
     currentLocation: this.props.location,
@@ -59,8 +64,7 @@ class Afterparty extends React.Component<AfterpartyProps, AfterpartyState> {
     const currentLocation = props.location;
     const previousLocation = state.currentLocation;
 
-    const navigated = currentLocation !== previousLocation;
-    if (navigated) {
+    if (isLocationChanged(previousLocation, currentLocation)) {
       return {
         previousLocation: state.previousLocation || previousLocation,
         currentLocation,
@@ -72,8 +76,9 @@ class Afterparty extends React.Component<AfterpartyProps, AfterpartyState> {
   }
 
   componentDidUpdate(_prevProps: AfterpartyProps, prevState: AfterpartyState) {
-    const navigated = prevState.currentLocation !== this.state.currentLocation;
-    if (navigated) {
+    if (
+      isLocationChanged(prevState.currentLocation, this.state.currentLocation)
+    ) {
       const {
         location,
         history,

@@ -5,6 +5,7 @@ import {
   TransitionBehavior,
 } from './types';
 import NotFoundComponent from './NotFoundComponent';
+import { Location } from 'history';
 
 /** @private is the given object a Function? */
 export const isFunction = (obj: any) => 'function' === typeof obj;
@@ -75,6 +76,15 @@ export function isJS(str: string) {
 export function isInstantTransition(transition: TransitionBehavior) {
   return transition === 'instant';
 }
+
+/** @private did the location change between renders? Compares fields, not object identity */
+export const isLocationChanged = (
+  previous: Location | null,
+  current: Location | null
+): boolean =>
+  previous?.pathname !== current?.pathname ||
+  previous?.key !== current?.key ||
+  previous?.search !== current?.search;
 
 /** @private Strips basename from the given URL so that matchPath can use it normally outside the router context */
 export function stripBasename(location?: string, basename?: string): string {
