@@ -1,0 +1,18 @@
+lerna.json
+  h_711ca8ae66e98a 12
+packages/after.js/package.json
+  h_711ca8ae66e98a 2,87
+packages/babel-plugin-after/package.json
+  h_711ca8ae66e98a 4
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "eab8007eb528fc992df63faa16ee246523a3b306",
+  "prompts": {},
+  "humans": {
+    "h_711ca8ae66e98a": {
+      "author": "Michał Kostrzyński <michal.kostrzynski@stonly.com>"
+    }
+  }
+}
