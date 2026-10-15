@@ -1,0 +1,25 @@
+packages/after.js/src/utils.ts
+  s_0aef0ffeb61dbe::t_4147b93f8fc881 8,80-87
+  s_0aef0ffeb61dbe::t_446e5082b89c05 88
+packages/after.js/test/isLocationChanged.test.ts
+  s_0aef0ffeb61dbe::t_5e46597cdb0e78 1-32
+packages/after.js/src/After.tsx
+  s_0aef0ffeb61dbe::t_7c289c45b9aad1 44
+  s_0aef0ffeb61dbe::t_4147b93f8fc881 19-24,67,79-81
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "013f13d63311c2a7a8172051cee03ae33ce532ee",
+  "prompts": {},
+  "sessions": {
+    "s_0aef0ffeb61dbe": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "6f76b98b-2b85-4a41-bfee-7fc96fa0e179",
+        "model": "claude-opus-5-5"
+      },
+      "human_author": "Michał Kostrzyński <michal.kostrzynski@stonly.com>"
+    }
+  }
+}
